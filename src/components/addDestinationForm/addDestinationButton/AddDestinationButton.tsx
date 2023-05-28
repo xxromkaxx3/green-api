@@ -1,8 +1,7 @@
-
 interface Props {
-    onClickHandler:()=>void
+  onClickHandler: () => void;
 }
 
-export const AddDestinationButton: React.FC<Props> = ({onClickHandler})=> {
-    return <button onClick={onClickHandler}>save</button>
-}
+export const AddDestinationButton: React.FC<Props> = ({ onClickHandler }) => {
+  return <button onClick={onClickHandler}>save</button>;
+};

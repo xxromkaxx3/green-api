@@ -1,1 +1,1 @@
-export {AddDestinationForm} from './AddDestinationForm'
+export { AddDestinationForm } from "./AddDestinationForm";

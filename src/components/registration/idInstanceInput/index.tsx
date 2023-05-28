@@ -1,1 +1,1 @@
-export {IdInstanceInput} from './IdInstanceInput'
+export { IdInstanceInput } from "./IdInstanceInput";

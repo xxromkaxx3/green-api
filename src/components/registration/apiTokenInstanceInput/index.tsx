@@ -1,1 +1,1 @@
-export {ApiTokenInstanceInput} from './ApiTokenInstanceInput'
+export { ApiTokenInstanceInput } from "./ApiTokenInstanceInput";

@@ -1,1 +1,0 @@
-export {SendMessageButton} from './SendMessageButton'

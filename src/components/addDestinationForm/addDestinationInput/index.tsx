@@ -1,1 +1,1 @@
-export {AddDestinationInput} from './AddDestinationInput'
+export { AddDestinationInput } from "./AddDestinationInput";
