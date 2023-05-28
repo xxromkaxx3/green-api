@@ -1,4 +1,4 @@
-import { SandMessageButton } from "./sandMessageButton"
+import { SendMessageButton } from "./sendMessageButton"
 import { TextInput } from "./textInput"
 import { ChangeEvent } from 'react'
 
@@ -6,12 +6,12 @@ import { ChangeEvent } from 'react'
 interface Props {
     value: string,
     onChangeHandler: (value:ChangeEvent<HTMLInputElement>)=>void
-    onSandMessageHandler: ()=>void
+    onSendMessageHandler: ()=>void
 }
 
-export const TextInputForm: React.FC<Props> = ({value, onChangeHandler, onSandMessageHandler})=> {
+export const TextInputForm: React.FC<Props> = ({value, onChangeHandler, onSendMessageHandler})=> {
     return <div className="text-input-form">
         <TextInput onChangeHandler={onChangeHandler} value={value} />
-        <SandMessageButton onClickHandler={onSandMessageHandler}/>
+        <SendMessageButton onClickHandler={onSendMessageHandler}/>
     </div>
 }

@@ -45,15 +45,17 @@ export const MainPage: React.FC<Props> = ({user, destinationId})=> {
         try {
             const response =  await fetch(`https://api.green-api.com/waInstance${user.idInstance}/receiveNotification/${user.apiTokenInstance}`)
             const result:ResponseType = await response.json()
-            
-            if (result && result.body.senderData.chatId === `7${destinationId}@c.us`){
-                const textMessage = result.body.messageData.textMessageData.textMessage
-                const newMessage = {
-                    message: textMessage,
-                    isMine: false,
-                    id: result.body.idMessage
+            console.log(result)
+            if (result){
+                if (result.body.messageData && result.body.messageData.textMessageData && result.body.senderData.chatId === `7${destinationId}@c.us`){
+                    const textMessage = result.body.messageData.textMessageData.textMessage
+                    const newMessage = {
+                        message: textMessage,
+                        isMine: false,
+                        id: result.body.idMessage
+                    }
+                    setChatMessageList(prev => [...prev, newMessage])
                 }
-                setChatMessageList(prev => [...prev, newMessage])
                 await fetch(`https://api.green-api.com/waInstance${user.idInstance}/deleteNotification/${user.apiTokenInstance}/${result.receiptId}`,{
                     method: "DELETE"
                 })
@@ -67,7 +69,7 @@ export const MainPage: React.FC<Props> = ({user, destinationId})=> {
 
     useEffect(()=>{fetchMessage()},[])
 
-    async function onSandMessageHandler (){
+    async function onSendMessageHandler (){
         try{
             if (!textInputValue) return
             const response = await fetch(`https://api.green-api.com/waInstance${user.idInstance}/sendMessage/${user.apiTokenInstance}`,{
@@ -95,6 +97,6 @@ export const MainPage: React.FC<Props> = ({user, destinationId})=> {
 
     return <div className="main-page">
         <ChatWindow chatMessageList={chatMessageList}/>
-        <TextInputForm onSandMessageHandler={onSandMessageHandler} onChangeHandler={onChangeHandler} value={textInputValue}/>
+        <TextInputForm onSendMessageHandler={onSendMessageHandler} onChangeHandler={onChangeHandler} value={textInputValue}/>
     </div>
 }

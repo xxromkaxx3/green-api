@@ -1,1 +1,0 @@
-export {SandMessageButton} from './SandMessageButton'

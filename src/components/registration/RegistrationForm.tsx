@@ -1,4 +1,4 @@
-import { SandFormButton } from './sandFormButton'
+import { SendFormButton } from './sendFormButton'
 import { IdInstanceInput } from './idInstanceInput'
 import { ApiTokenInstanceInput } from './apiTokenInstanceInput'
 import { ChangeEvent } from 'react'
@@ -14,6 +14,6 @@ export const RegistrationForm: React.FC<Props> = ({onAuthorizedChange, onUserCha
     return <div style={{display:"grid"} }>
     <IdInstanceInput value={value} onChangeHandler={onUserChangeHandler}/>
     <ApiTokenInstanceInput value={value} onChangeHandler={onUserChangeHandler}/>
-    <SandFormButton onAuthorizedChange={onAuthorizedChange}/>
+    <SendFormButton onAuthorizedChange={onAuthorizedChange}/>
     </div>
 }
