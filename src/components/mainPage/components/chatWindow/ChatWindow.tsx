@@ -1,4 +1,4 @@
-import { ChatMessageItem } from "../MainPage";
+import { ChatMessageItem } from "../../MainPage";
 import { MessageItem } from "./messageItem";
 
 interface Props {
