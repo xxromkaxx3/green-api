@@ -7,9 +7,7 @@ interface Props {
 
 export const MessageItem: React.FC<Props> = ({ messageItem }) => {
   return (
-    <StyledMessageItem
-      style={{ alignSelf: messageItem.isMine ? "end" : "start" }}
-    >
+    <StyledMessageItem isMine={messageItem.isMine} >
       {messageItem.message}
     </StyledMessageItem>
   );

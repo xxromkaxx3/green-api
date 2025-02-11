@@ -71,20 +71,23 @@ export const StyledSendButton = styled.button({
     cursor: 'pointer',
 })
 
-export const StyledMessageItem = styled.div({
+export const StyledMessageItem = styled.div<{isMine: boolean}>(({isMine}) => ({
     position: 'relative',
     backgroundColor: '#265b4c',
     padding: '5px',
-    borderRadius: '5px 0 5px 5px',
+    borderRadius: isMine ? '5px 0 5px 5px' : '0 5px 5px 5px',
     wordBreak: 'break-word',
     maxWidth: '70%',
+    alignSelf: isMine ? "end" : "start",
     "&:before": {
         content: "''",
         width: '10px',
         height: '10px',
-        background: 'linear-gradient(140deg, rgba(38,91,76,1) 50%, rgba(0,0,0,0) 50%)',
+        background: isMine ? 'linear-gradient(140deg, rgba(38,91,76,1) 50%, rgba(0,0,0,0) 50%)' : 'linear-gradient(220deg, rgba(38,91,76,1) 50%, rgba(0,0,0,0) 50%)',
         position: 'absolute',
-        right: '-10px',
+        right: isMine ? '-10px': 'none',
+        left: isMine ? 'none': '-10px',
         top: '0',
+
     }
-})
+}))
